@@ -1,0 +1,62 @@
+---
+import Badge from "../components/Badge.astro";
+import BadgeDark from "../components/BadgeDark.astro";
+
+import MailSendIcon from "../icons/MailSend.astro";
+import LinkedinIcon from "../icons/Linkedin.astro";
+---
+
+<div class="flex justify-center items-center gap-x-4">
+  <div
+    class="rounded-full bg-gradient-to-tl from-blue-600 via-blue-500 to-blue-200"
+  >
+    <img
+      src="/public/images/memoji-pc.png"
+      alt="Steven perfil"
+      class="size-[120px] rounded-full"
+    />
+  </div>
+  <div class="flex flex-col gap-y-2">
+    <h1 class="text-3xl md:text-3xl font-extrabold text-gray-200">
+      Hey, soy Steven!
+    </h1>
+    <h3 class="text-base font-bold text-gray-200">
+      <span
+        class="bg-gradient-to-l from-blue-600 via-blue-300 to-blue-200 bg-clip-text text-transparent"
+      >
+        Desarrollador Full-stack
+      </span>
+      <span>🚀</span>
+    </h3>
+  </div>
+</div>
+<p class="mt-6 opacity-90 text-base text-justify">
+  +2 años de experiencia profesional como Ingeniero de Sistemas en el Desarrollo
+  Full-stack.<span class="opacity-60">
+    Hábil en programación, bases de datos y creación de experiencias de usuario
+    sin fisuras.</span
+  > Experto en tecnologías modernas y buenas prácticas de desarrollo,<span
+    class="opacity-60"
+  >
+    enfocado en la creación de soluciones robustas y escalables.</span
+  >
+</p>
+
+<div class="w-full flex justify-center gap-x-4 py-4">
+  <a
+    href="https://www.linkedin.com/in/stivenvr/"
+    target="_blank"
+    rel="noopener"
+  >
+    <Badge>
+      <LinkedinIcon class="size-3 mr-1" />
+      Linkedin</Badge
+    >
+  </a>
+  <a href="mailto:stivenvillarreal@gmail.com" target="_blank" rel="noopener">
+    <BadgeDark>
+      <MailSendIcon class="size-4 mr-1" />
+      Contactame</BadgeDark
+    >
+  </a>
+</div>

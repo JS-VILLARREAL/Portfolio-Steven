@@ -1,12 +1,93 @@
 ---
-// Importing the logo
+const navItems = [
+  {
+    title: "Inicio",
+    label: "inicio",
+    url: "/#inicio",
+  },
+  {
+    title: "Experiencia",
+    label: "experiencia",
+    url: "/#experiencia",
+  },
+  {
+    title: "Proyectos",
+    label: "proyecto",
+    url: "/#proyecto",
+  },
+  {
+    title: "Contacto",
+    label: "contacto",
+    url: "/#contacto",
+  },
+];
 ---
 
-<header class="flex justify-center items-center py-10 w-[606px] h-[53px]">
-  <nav class="flex gap-12 opacity-80">
-    <a href="/">Experiencia</a>
-    <a href="/projects">Proyectos</a>
-    <a href="/about">Sobre mí</a>
-    <a href="/contact">Contacto</a>
+<header
+  class="fixed top-0 z-50 flex justify-center items-center w-full mx-auto mt-4"
+>
+  <nav
+    class="flex gap-4 md:gap-4 text-gray-200 font-medium rounded-xl px-3 text-sm items-center justify-center"
+  >
+    {
+      navItems.map((link) => (
+        <a
+          class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500"
+          aria-label={link.label}
+          href={link.url}
+        >
+          {link.title}
+        </a>
+      ))
+    }
   </nav>
 </header>
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("[data-section]");
+    const navItems = document.querySelectorAll("header nav a");
+
+    console.log(sections);
+    console.log(navItems);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.getAttribute("id");
+          const navItem = document.querySelector(`nav a[href="/#${id}"]`);
+
+          if (entry.isIntersecting) {
+            navItem?.classList.add("text-blue-500");
+          } else {
+            navItem?.classList.remove("text-blue-500");
+          }
+        });
+      },
+      {
+        rootMargin: "0px",
+        threshold: 0.7,
+      }
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+  });
+</script>
+
+<style>
+  nav {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  @keyframes nav-shadown {
+    0% {
+      @apply dark:bg-gray-800/0 bg-white/0;
+    }
+    to {
+      @apply shadow-lg ring-1 backdrop-blur ring-white/5;
+    }
+  }
+</style>

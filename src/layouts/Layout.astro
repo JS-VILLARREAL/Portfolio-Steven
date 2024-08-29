@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/onest";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
@@ -15,8 +16,8 @@ const { title, description } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/*" href="/public/images/logo.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -27,6 +28,7 @@ const { title, description } = Astro.props;
     </div> -->
     <Header />
     <slot />
+    <Footer />
   </body>
 </html>
 <style is:global>
@@ -35,9 +37,8 @@ const { title, description } = Astro.props;
   }
   html {
     font-family: "Onest Variable", system-ui, sans-serif;
-    /* background: #13151a; */
+    scroll-behavior: smooth;
   }
-
   body {
     display: flex;
     flex-direction: column;
@@ -45,9 +46,22 @@ const { title, description } = Astro.props;
     justify-content: center;
     min-height: 100vh;
     background: radial-gradient(
-      ellipse 80% 80% at 50% -20%,
+      ellipse 60% 60% at 50% -30%,
       rgba(120, 119, 198, 0.3),
       rgba(255, 255, 255, 0)
     );
+    /* background: #ffffff; */
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  #header-nav {
+    animation: blur linear both 0.5s;
+    animation-timeline: scroll();
+    animation-range: 0 500px;
   }
 </style>

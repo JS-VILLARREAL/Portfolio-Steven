@@ -3,32 +3,35 @@ import ExperienceItem from "./ExperienceItem.astro";
 
 const EXPERIENCE = [
   {
-    date: "February 2022",
-    title: "Application UI code in Tailwind CSS",
+    date: "Feb 2024 - Jul 2024",
+    title: "Desarrollador Front-end",
+    subtitle: "Technology Infosys",
     description:
-      "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+      "Desarrollé e implementé un sistema de administración para IPS usando ReactJS, NextJS y TypeScript. Me enfoqué en componentes reutilizables, integrando APIs para la gestión de personal, y colaboré con el equipo de backend para asegurar la transmisión de datos y cumplir con los plazos del proyecto.",
     link: "https://tailwindui.com/components/application-ui",
   },
   {
-    date: "March 2022",
-    title: "Marketing UI design in Figma",
+    date: "Ago 2023 - Oct 2023",
+    title: "Desarrollador Full-stack",
+    subtitle: "Independiente",
     description:
-      "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+      "Desarrollé sistemas de administración de datos con Vue.js y Vuetify en el frontend para interfaces dinámicas, y Django Rest Framework en el backend. Implementé operaciones CRUD y endpoints para una manipulación eficiente de los datos.",
   },
   {
-    date: "April 2022",
-    title: "E-Commerce UI code in Tailwind CSS",
+    date: "Jun 2020 - Feb 2022",
+    title: "Analista de Sistemas Junior",
+    subtitle: "Solarium Energy S.A.S",
     description:
-      "Get started with dozens of web components and interactive elements built on top of Tailwind CSS.",
+      "Analicé requerimientos y programé sistemas de información con HTML5, JavaScript y CSS. Administré la evaluación docente en la Universidad Piloto de Colombia y colaboré en la instalación de sistemas para clínicas odontológicas y radiológicas, asegurando su eficiencia y adecuación a las necesidades específicas.",
   },
 ];
 ---
 
-<ol class="relative border-s border-gray-200 dark:border-gray-700">
+<ol class="relative border-s border-gray-200 dark:border-gray-700 sm:ml-20">
   {
-    EXPERIENCE.map((experiencie) => (
+    EXPERIENCE.map((experience) => (
       <li class="mb-10 ms-4">
-        <ExperienceItem {...experiencie} />
+        <ExperienceItem {...experience} />
       </li>
     ))
   }
