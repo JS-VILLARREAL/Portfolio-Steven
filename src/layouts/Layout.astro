@@ -22,6 +22,10 @@ const { title, description } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <div
+      class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
+    >
+    </div>
     <Header />
     <slot />
     <Footer />
@@ -41,11 +45,7 @@ const { title, description } = Astro.props;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: radial-gradient(
-      ellipse 60% 60% at 50% -30%,
-      rgba(120, 119, 198, 0.3),
-      rgba(255, 255, 255, 0)
-    );
+    background: black;
   }
 
   @media (prefers-reduced-motion: reduce) {
