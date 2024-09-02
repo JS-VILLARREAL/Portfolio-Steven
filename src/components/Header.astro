@@ -1,4 +1,6 @@
 ---
+import ThemeToggle from "../components/Theme.astro";
+
 const navItems = [
   {
     title: "Inicio",
@@ -40,6 +42,7 @@ const navItems = [
         </a>
       ))
     }
+    <ThemeToggle />
   </nav>
 </header>
 <script>
