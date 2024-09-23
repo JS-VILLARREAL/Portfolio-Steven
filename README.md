@@ -3,7 +3,7 @@
 Welcome to my personal portfolio! Here you will find a compilation of my projects, skills and experience as a systems engineer and Full-stack web developer.
 
 <div align="center">
-<a href="https://porfolio.dev/">
+<a href="#">
 <img src="./public/portfolio.webp">
 </a>
 <p></p>
