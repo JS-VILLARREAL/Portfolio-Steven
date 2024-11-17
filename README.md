@@ -20,12 +20,6 @@ Welcome to my personal portfolio! Here you will find a compilation of my project
 
 This repository contains source code from my personal portfolio, designed to showcase my skills and experience in software development, with a focus on scalable solutions, modern user interfaces, and good development practices.
 
-## 🚀 Project Structure
-
-- `/src`: Contains all the project source code.
-- `/public`: Static files such as images and fonts.
-- `README.md`: This file, with a general description of the project.
-
 ## 📨 Contact me
 
 If you wish to contact me, you can do so through the following means:
