@@ -1,0 +1,107 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Experience from "@/components/Experience.astro";
+import SectionConteiner from "@/components/SectionConteiner.astro";
+import Hero from "@/components/Hero.astro";
+import TitleSection from "@/components/TitleSection.astro";
+
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<Layout title={i18n.SEO_TITLE} description={i18n.SEO_DESCRIPTION}>
+  <main class="w-auto">
+    <SectionConteiner id="inicio" class="py-48">
+      <Hero />
+    </SectionConteiner>
+
+    <SectionConteiner id="experiencia" class="pb-16">
+      <TitleSection>{i18n.EXPERIENCE.TITLE}</TitleSection>
+      <Experience />
+    </SectionConteiner>
+    <SectionConteiner id="proyecto" class="pb-16">
+      <TitleSection> Proyectos </TitleSection>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-50">
+            Portfolio Steven
+          </h3>
+          <p class="mb-2 text-base text-gray-600 dark:text-gray-200">
+            Mi portafolio personal, presentando mis habilidades y proyectos
+            destacados.
+          </p>
+          <a
+            href="#"
+            class="text-gray-600 dark:text-white text-sm inline-flex items-center underline dark:hover:text-gray-300 hover:text-gray-800"
+          >
+            Pruebalo ahora
+            <svg
+              class="size-4
+            ms-[4px]"
+              xmlns="http://www.w3.org/2000/svg"
+              width="44"
+              height="44"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M17 7l-10 10"></path>
+              <path d="M8 7l9 0l0 9"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </SectionConteiner>
+    <SectionConteiner id="sobremi" class="pb-16">
+      <TitleSection> Sobre mí </TitleSection>
+      <div class="text-base text-gray-500 dark:text-gray-300 text-center">
+        <p class="mb-4">
+          Holaa! mi nombre es Steven Villarreal, soy ingeniero de sistemas y me
+          dedico al desarrollo web. Tengo más de 2 años de experiencia
+          profesional en el desarrollo full-stack, enfocado en la creación de
+          soluciones robustas y escalables.
+        </p>
+      </div>
+    </SectionConteiner>
+    <SectionConteiner id="contacto" class="pb-16">
+      <TitleSection> Contacto </TitleSection>
+      <h2
+        class="flex gap-x-2 items-center text-2xl md:text-3xl font-semibold mb-6 text-gray-200"
+      >
+        <div class="flex flex-col gap-y-4">
+          <p class="text-base text-gray-500 dark:text-gray-200">
+            ¿Quieres trabajar juntos en tu próximo proyecto? ¡Contáctame!
+          </p>
+          <a
+            href="mailto:stivenvillarreal@gmail.com"
+            class="text-white text-sm inline-flex items-center underline hover:text-gray-300"
+          >
+            Envíame un correo
+            <svg
+              class="size-4 ms-[4px]"
+              xmlns="http://www.w3.org/2000/svg"
+              width="44"
+              height="44"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M17 7l-10 10"></path>
+              <path d="M8 7l9 0l0 9"></path>
+            </svg>
+          </a>
+        </div>
+      </h2>
+    </SectionConteiner>
+  </main>
+</Layout>

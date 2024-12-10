@@ -1,0 +1,45 @@
+---
+import Layout404 from "@/layouts/Layout404Error.astro";
+import { getI18N } from "@/i18n";
+
+import { getLangFromUrl, useTranslatedPath } from "@/i18n/utils";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+---
+
+<Layout404
+  title={i18n.SEO.ERROR_404_TITLE}
+  description={i18n.SEO.ERROR_404_DESCRIPTION}
+>
+  <div class="grid h-screen place-content-center px-4">
+    <div class="text-center">
+      <h1 class="text-9xl font-black dark:text-gray-200 text-gray-500">404</h1>
+
+      <p
+        class="text-2xl font-bold tracking-tight dark:text-gray-600 text-gray-700 sm:text-4xl"
+      >
+        Uh-oh!
+      </p>
+
+      <p class="mt-4 dark:text-gray-400 text-gray-600">
+        {i18n.ERROR_404.TITLE}
+      </p>
+
+      <a href={translatePath("/")}>
+        <button
+          class="mt-6 relative inline-flex h-12 w-full items-center justify-center rounded-md dark:bg-white bg-gray-700 px-6 font-semibold dark:text-gray-950 text-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50"
+        >
+          <div
+            class="absolute -inset-0.5 -z-10 rounded-lg bg-gradient-to-b dark:from-[#c7d2fe] dark:to-[#8678f9] from-[#2b3c5a] to-[#1a213a] opacity-75 blur"
+          >
+          </div>
+          {i18n.ERROR_404.BACK_HOMEPAGE_BTN}
+        </button>
+      </a>
+    </div>
+  </div>
+</Layout404>

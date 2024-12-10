@@ -1,9 +1,5 @@
 ---
 import "@fontsource-variable/onest";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-
-import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -20,27 +16,17 @@ const { currentLocale } = Astro;
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/*" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <script
-      src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"
-    ></script>
-    <script
-      is:inline
-      src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"
-    ></script>
-    <ViewTransitions />
   </head>
   <body>
     <div
       class="fixed inset-0 -z-10 h-full w-full dark:items-center dark:px-5 darK:py-24 bg-white dark:bg-black [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#24e_100%)] dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#172554_100%)]"
     >
     </div>
-    <Header />
     <slot />
-    <Footer />
 
     <style is:global>
       :root {
@@ -73,18 +59,9 @@ const { currentLocale } = Astro;
       }
 
       #header-nav {
-        animation: nav-shadown 1s linear both;
+        animation: blur linear both 0.5s;
         animation-timeline: scroll();
-        animation-range: 0 100px;
-      }
-
-      @keyframes nav-shadown {
-        0% {
-          @apply dark:bg-gray-800/0 bg-white/0;
-        }
-        to {
-          @apply shadow-lg ring-1 backdrop-blur ring-white/5;
-        }
+        animation-range: 0 500px;
       }
 
       ::-webkit-scrollbar {

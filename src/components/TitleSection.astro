@@ -1,3 +1,10 @@
+---
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
 <h2
   class="flex flex-col justify-center gap-x-2 items-center text-xl md:text-3xl font-bold mb-10 dark:text-gray-200 text-gray-800 uppercase"
 >
@@ -5,6 +12,6 @@
   <span
     class="text-sm bg-gradient-to-l from-blue-600 dark:via-blue-300 dark:to-blue-200 via-blue-400 to-blue-300 bg-clip-text text-transparent"
   >
-    Explorar ahora
+    {i18n.EXPLORE_NOW}
   </span>
 </h2>

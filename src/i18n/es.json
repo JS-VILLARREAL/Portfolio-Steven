@@ -1,0 +1,51 @@
+{
+  "SEO_TITLE": "Porfolio Steven - Ingeniero de Sistemas y Desarrollador de Software",
+  "SEO_DESCRIPTION": "Explora mi trabajo como desarrollador web, presentando proyectos que destacan mis habilidades en diseño, desarrollo y tecnología.",
+  "SEO": {
+    "ERROR_404_TITLE": "404 - Página no encontrada",
+    "ERROR_404_DESCRIPTION": "Página no encontrada (Error 404). Verifica la URL o explora nuestras secciones. ¿Necesitas ayuda? Contáctanos."
+  },
+  "HERO": {
+    "TITLE": "Hola, soy Steven!",
+    "SUBTITLE": "Desarrollador Full-stack",
+    "DESCRIPTION": "+2 años de experiencia profesional como <strong>Ingeniero de Sistemas en el Desarrollo Full-stack.</strong> Hábil en programación, bases de datos y reación de experiencias de usuario sin fisuras. <strong>Experto en tecnologías modernas y buenas prácticas de desarrollo</strong>, enfocado en la creación de soluciones robustas y escalables.",
+    "BTN_CONTACT": "Contáctame"
+  },
+  "NAV": {
+    "HOME": "Inicio",
+    "EXPERIENCE": "Experiencia",
+    "PROJECTS": "Proyectos",
+    "ABOUT_ME": "Sobre mí",
+    "CONTACT": "Contacto"
+  },
+  "EXPLORE_NOW": "Explora ahora",
+  "EXPERIENCE": {
+    "TITLE": "Experiencia laboral",
+    "JOB_1": {
+      "TITLE": "Desarrollador Front-end",
+      "SUBTITLE": "Technology Infosys",
+      "DATE": "Feb 2024 - Jul 2024",
+      "DESCRIPTION": "Desarrollé e implementé un sistema de administración para IPS usando ReactJS, NextJS y TypeScript. Me enfoqué en componentes reutilizables, integrando APIs para la gestión de personal, y colaboré con el equipo de backend para asegurar la transmisión de datos y cumplir con los plazos del proyecto."
+    },
+    "JOB_2": {
+      "TITLE": "Desarrollador Full-stack",
+      "DATE": "Ago 2023 - Oct 2023",
+      "DESCRIPTION": "Desarrollé sistemas de administración de datos con Vue.js y Vuetify en el frontend para interfaces dinámicas, y Django Rest Framework en el backend. Implementé operaciones CRUD y endpoints para una manipulación eficiente de los datos."
+    },
+    "JOB_3": {
+      "TITLE": "Analista de Sistemas Junior",
+      "SUBTITLE": "Solarium Energy S.A.S",
+      "DATE": "Jun 2020 - Feb 2022",
+      "DESCRIPTION": "Analicé requerimientos y programé sistemas de información con HTML5, JavaScript y CSS. Administré la evaluación docente en la Universidad Piloto de Colombia y colaboré en la instalación de sistemas para clínicas odontológicas y radiológicas, asegurando su eficiencia y adecuación a las necesidades específicas."
+    }
+  },
+  "FOOTER": {
+    "COPYRIGHT": "Todos los derechos reservados.",
+    "MADE_WITH": "Creado con",
+    "AND": "y"
+  },
+  "ERROR_404": {
+    "TITLE": "Página no encontrada",
+    "BACK_HOMEPAGE_BTN": "Volver al inicio"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "SEO_TITLE": "Steven's Portfolio - Systems Engineer and Software Developer",
+  "SEO_DESCRIPTION": "Explore my work as a web developer, showcasing projects that highlight my skills in design, development, and technology.",
+  "SEO": {
+    "ERROR_404_TITLE": "404 - Page not found",
+    "ERROR_404_DESCRIPTION": "Page not found (Error 404). Check the URL or explore our sections. Need help? Contact us."
+  },
+  "HERO": {
+    "TITLE": "Hi, I'm Steven!",
+    "SUBTITLE": "Full-stack Developer",
+    "DESCRIPTION": "+2 years of professional experience as <strong>Systems Engineer in Full-stack Development.</strong> Skilled in programming, databases and seamless user experience reation. <strong>Expert in modern technologies and good development practices</strong>, focused on creating robust and scalable solutions.",
+    "BTN_CONTACT": "Contact me"
+  },
+  "NAV": {
+    "HOME": "Home",
+    "EXPERIENCE": "Experience",
+    "PROJECTS": "Projects",
+    "ABOUT_ME": "About me",
+    "CONTACT": "Contact"
+  },
+  "EXPLORE_NOW": "Explore now",
+  "EXPERIENCE": {
+    "TITLE": "Work experience",
+    "JOB_1": {
+      "TITLE": "Front-end Developer",
+      "SUBTITLE": "Technology Infosys",
+      "DATE": "Feb 2024 - Jul 2024",
+      "DESCRIPTION": "Developed and implemented an administration system for IPS using ReactJS, NextJS and TypeScript. Focused on reusable components, integrating APIs for personnel management, and collaborating with the backend team to ensure data transmission and meet project deadlines."
+    },
+    "JOB_2": {
+      "TITLE": "Full-stack Developer",
+      "DATE": "Aug 2023 - Oct 2023",
+      "DESCRIPTION": "Developed administration systems with Vue.js and Vuetify in the frontend for dynamic interfaces, and Django Rest Framework in the backend. Implemented CRUD operations and endpoints for efficient data manipulation."
+    },
+    "JOB_3": {
+      "TITLE": "Junior Systems Analyst",
+      "SUBTITLE": "Solarium Energy S.A.S",
+      "DATE": "Jun 2020 - Feb 2022",
+      "DESCRIPTION": "Analyzed requirements and programmed information systems with HTML5, JavaScript and CSS. Managed the teacher evaluation at the Universidad Piloto de Colombia and collaborated in the installation of systems for dental and radiological clinics, ensuring their efficiency and suitability to specific needs."
+    }
+  },
+  "FOOTER": {
+    "COPYRIGHT": "All rights reserved.",
+    "MADE_WITH": "Created with",
+    "AND": "and"
+  },
+  "ERROR_404": {
+    "TITLE": "Page not found",
+    "BACK_HOMEPAGE_BTN": "Back to home"
+  }
+}

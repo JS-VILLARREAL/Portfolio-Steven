@@ -1,48 +1,55 @@
 ---
-import Badge from "../components/Badge.astro";
-import BadgeDark from "../components/BadgeDark.astro";
+import Badge from "@/components/Badge.astro";
+import BadgeDark from "@/components/BadgeDark.astro";
 
-import MailSendIcon from "../icons/MailSend.astro";
-import LinkedinIcon from "../icons/Linkedin.astro";
+import MailSendIcon from "@/icons/MailSend.astro";
+import LinkedinIcon from "@/icons/Linkedin.astro";
+
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <div class="flex justify-center items-center gap-x-4">
-  <div
-    class="rounded-full bg-gradient-to-tl from-blue-600 via-blue-500 to-blue-200"
-  >
-    <img
-      src="/steven.webp"
-      alt="Steven perfil"
-      class="size-[120px] rounded-full"
-    />
+  <div class="relative">
+    <div
+      class="rounded-full size-28 sm:size-36 bg-gradient-to-tl from-blue-600 via-blue-500 to-blue-200 items-center justify-center flex shadow-xl dark:shadow-lg shadow-black/30 dark:shadow-blue-500/50"
+    >
+      <img src="/memoji.webp" alt="Memoji" class="rounded-full" />
+    </div>
+    <div
+      class="absolute bottom-0 right-0 size-8 sm:size-11 bg-white rounded-full flex items-center justify-center dark:bg-gray-200 shadow-lg shadow-black/30 dark:shadow-blue-500/50"
+    >
+      <button
+        id="confetti-btn"
+        class="text-base sm:text-xl hover:scale-125 transition hover:bg-transparent rounded-full"
+      >
+        <span>🎉</span>
+      </button>
+    </div>
   </div>
   <div class="flex flex-col gap-y-2">
     <h1
-      class="text-3xl md:text-3xl font-extrabold dark:text-gray-200 text-gray-800"
+      class="text-2xl md:text-3xl font-extrabold dark:text-gray-200 text-gray-800"
     >
-      Hey, soy Steven!
+      {i18n.HERO.TITLE}
     </h1>
-    <h3 class="text-base font-bold text-gray-200">
+    <h3 class="text-sm md:text-base font-bold text-gray-200">
       <span
         class="bg-gradient-to-l from-blue-600 dark:via-blue-300 dark:to-blue-200 via-blue-400 to-blue-300 bg-clip-text text-transparent"
       >
-        Desarrollador Full-stack
+        {i18n.HERO.SUBTITLE}
       </span>
-      <span>🚀</span>
     </h3>
   </div>
 </div>
-<p
-  class="mt-8 text-gray-800 text-center dark:[&>strong]:text-blue-400 [&>strong]:text-blue-500 [&>strong]:font-semibold dark:text-gray-300"
->
-  +2 años de experiencia profesional como <strong
-    >Ingeniero de Sistemas en el Desarrollo Full-stack.</strong
-  > Hábil en programación, bases de datos y creación de experiencias de usuario sin
-  fisuras. <strong
-    >Experto en tecnologías modernas y buenas prácticas de desarrollo</strong
-  >, enfocado en la creación de soluciones robustas y escalables.
-</p>
-
+<div class="flex justify-center items-center">
+  <p
+    class="mt-8 text-gray-800 md:text-center dark:[&>strong]:text-blue-400 [&>strong]:text-blue-500 [&>strong]:font-semibold dark:text-gray-300 text-pretty text-sm md:text-base"
+    set:html={i18n.HERO.DESCRIPTION}
+  />
+</div>
 <div class="w-full flex justify-center gap-x-4 py-4">
   <a
     href="https://www.linkedin.com/in/stivenvr/"
@@ -51,13 +58,47 @@ import LinkedinIcon from "../icons/Linkedin.astro";
   >
     <Badge>
       <LinkedinIcon class="size-3 mr-1" />
-      Linkedin</Badge
-    >
+      Linkedin
+    </Badge>
   </a>
   <a href="mailto:stivenvillarreal@gmail.com" target="_blank" rel="noopener">
     <BadgeDark>
       <MailSendIcon class="size-4 mr-1" />
-      Contactame</BadgeDark
-    >
+      {i18n.HERO.BTN_CONTACT}
+    </BadgeDark>
   </a>
 </div>
+
+<script>
+  const btn = document.getElementById("confetti-btn");
+  btn?.addEventListener("click", () => {
+    const duration = 3000;
+    const animationEnd = Date.now() + duration;
+    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+    function randomInRange(min: number, max: number) {
+      return Math.random() * (max - min) + min;
+    }
+
+    const interval = setInterval(function () {
+      const timeLeft = animationEnd - Date.now();
+
+      if (timeLeft <= 0) {
+        return clearInterval(interval);
+      }
+
+      const particleCount = 50 * (timeLeft / duration);
+      // since particles fall down, start a bit higher than random
+      confetti({
+        ...defaults,
+        particleCount,
+        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+      });
+      confetti({
+        ...defaults,
+        particleCount,
+        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+      });
+    }, 250);
+  });
+</script>
